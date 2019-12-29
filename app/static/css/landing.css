@@ -1,0 +1,33 @@
+body {
+    background-image: linear-gradient(90deg, #ff512f, #dd2476);
+    font-family: verdana;
+}
+
+div.fitness-tracker-title {
+
+    -moz-animation: fadein 3s;      /* Firefox < 16 */
+    -webkit-animation: fadein 3s;   /* Safari, Chrome and Opera > 12.1 */
+    -o-animation: fadein 3s;        /* Opera < 12.1 */
+}
+
+img.fitness-tracker-large-logo {
+    width: 50%;
+    height: 50%;
+    filter: brightness(0) invert(1);
+
+}
+
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
