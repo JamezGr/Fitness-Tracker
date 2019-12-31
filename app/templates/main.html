@@ -3,11 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Fitness Tracker - Flask App </title>
+
+    <!-- Default Home Page CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+
 </head>
 <body>
     <div class="fitness-tracker-title" align="center">
         <img class="fitness-tracker-large-logo" src="/static/img/fitness_tracker_logo.png">
+    </div>
+
+    <div class="cycling select-option">
+        <img class="cycling-image option" src="/static/img/cycling-svgrepo-com.svg">
+    </div>
+
+    <div class="swimming select-option">
+        <img class="swimming-image option" src="/static/img/swimming-figure.svg">
+    </div>
+
+    <div class="lifting select-option">
+        <img class="lifting-image option" src="/static/img/dumbbell-svgrepo-com.svg">
     </div>
 
 </body>
