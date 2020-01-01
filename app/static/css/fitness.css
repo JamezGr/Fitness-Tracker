@@ -26,7 +26,7 @@ div.top-bar {
 div.calendar {
     position: fixed;
     margin-top: -65px;
-    margin-left: 400px;
+    margin-left: 350px;
 }
 
 div.week-text {
@@ -67,13 +67,13 @@ div.right-arrow {
 
 div.notifications {
     margin-top: -25px;
-    margin-left: 770px;
+    margin-left: 840px;
 
 }
 
 div.settings {
     margin-top: -20px;
-    margin-left: 820px;
+    margin-left: 890px;
 
 }
 
@@ -176,11 +176,35 @@ div.user-details {
     font-weight: bold;
 }
 
+.navigation-bar {
+    font-weight: bold;
+    font-size: 14px;
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 30px;
+    padding: 10px;
+}
+
+.menu-btn {
+    margin-bottom: 12px;
+}
+
+.menu-icon {
+    margin-left: -30px;
+    position:absolute;
+    height: 20px;
+    width: 20px;
+}
+
+.nav-home {
+    filter: invert(47%) sepia(70%) saturate(3573%) hue-rotate(340deg) brightness(99%) contrast(105%);
+
+}
 
 img.fitness-tracker-small-logo {
     width: 20%;
     height: 20%;
     margin-top: 10px;
-    margin-right: 900px;
+    margin-right: 1010px;
 
 }
