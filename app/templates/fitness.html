@@ -7,6 +7,9 @@
     <!-- Default Home Page CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/fitness.css') }}">
 
+</head>
+<body>
+
     <div class="top-bar">
         <div class="fitness-tracker-title" align="center">
             <img class="fitness-tracker-small-logo" src="/static/img/fitness_tracker_logo.png">
@@ -16,11 +19,11 @@
             <img class="calendar-icon" src="/static/img/Feather-core-calendar.svg">
 
             <div class="week-text">
-                <b>Day 1, Week 1</b>
+                <b>Day 4, Week 1</b>
             </div>
 
             <div class="day-text">
-                <b>Wednesday, 1st January 2020</b>
+                <b>Thursday, 2nd January 2020</b>
             </div>
 
             <div class="left-arrow small-icon">
@@ -43,6 +46,48 @@
     </div>
 
     <div class="main-container">
+        <div class="lifting">
+            <div id="lifting-title">
+                Lifting
+            </div>
+
+
+            <div class="lifting-container">
+                <div class="squat lift-container" align="center">
+                    <img class="squat lift-image" src="/static/img/Wide_stance_squat_with_barbell_1.svg">
+                    <div class="lift-text">
+                        Squat
+                    </div>
+
+                </div>
+
+                <div class="bench lift-container" align="center">
+                    <img class="bench lift-image" src="/static/img/Bench_press_2.svg">
+                    <div class="lift-text">
+                        Bench
+                    </div>
+                </div>
+
+                <div class="deadlift lift-container" align="center">
+                    <img class="deadlift lift-image" src="/static/img/Barbell_dead_lifts_1.svg">
+                    <div class="lift-text">
+                        Deadlift
+                    </div>
+                </div>
+
+                <div class="overhead-press lift-container" align="center">
+                    <img class="overhead-press lift-image" src="/static/img/Barbell_shoulder_press_1.svg">
+                    <div class="lift-text">
+                        Overhead Press
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
         <div class="side-bar">
             <div class="user-edit" align="right">
                 <b>EDIT</b>
@@ -112,13 +157,9 @@
             </div>
         </div>
 
-
         </div>
 
-
     </div>
-</head>
-<body>
 
 </body>
 </html>
