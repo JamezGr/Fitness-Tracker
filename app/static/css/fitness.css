@@ -139,7 +139,26 @@ div.lift-container {
     overflow: visible;
 }
 
-#lifting-title {
+div.other-container {
+    background-image: linear-gradient(360deg, #FBAB7E, #F7CE68);
+    border-radius: 25px;
+
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+
+    float: left;
+    margin-top: 15px;
+    margin-right: 20px;
+    padding-top: 20px;
+    padding-left: 0px;
+    width: 230px;
+    height: 125px;
+
+    overflow: visible;
+}
+
+div.fitness-title {
     font-size: 30px;
     font-weight: bold;
 }
@@ -150,9 +169,25 @@ div.lift-text {
 
 }
 
+div.other-text {
+    margin-top: 0px;
+    font-size: 24px;
+
+}
+
 img.lift-image {
     width:90%;
     height:90%;
+    margin-top: -10px;
+
+    filter: brightness(0) invert(1);
+
+    position: relative;
+}
+
+img.other-image {
+    width:75%;
+    height:75%;
     margin-top: -10px;
 
     filter: brightness(0) invert(1);
