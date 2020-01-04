@@ -13,5 +13,10 @@ def fitness():
     return render_template('fitness.html')
 
 
+@app.route("/profile")
+def edit_profile():
+    return render_template('profile.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)

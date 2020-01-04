@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Profile</title>
+
+    <!-- Default Home Page CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fitness.css') }}">
+
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="fitness-tracker-title" align="center">
+            <img class="fitness-tracker-small-logo" src="/static/img/fitness_tracker_logo.png">
+        </div>
+
+        <div class="calendar">
+            <img class="calendar-icon" src="/static/img/Feather-core-calendar.svg">
+
+            <div class="week-text">
+                <b>Day 4, Week 1</b>
+            </div>
+
+            <div class="day-text">
+                <b>Saturday, 4th January 2020</b>
+            </div>
+
+            <div class="left-arrow small-icon">
+                <img id="left-arrow-icon" src="/static/img/left-arrow.svg">
+            </div>
+
+            <div class="right-arrow small-icon">
+                <img id="right-arrow-icon" src="/static/img/right-arrow.svg">
+            </div>
+
+            <div class="notifications small-icon">
+                <img id="notifications-icon" src="/static/img/notifications-icon.svg">
+            </div>
+
+            <div class="settings small-icon">
+                <img id="settings-icon" src="/static/img/settings.svg">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="lifting">
+            <div class="fitness-title">
+                Edit Profile
+            </div>
+
+            <div class="current-profile">
+
+                <div class="current-profile-picture">
+                    <img class="current-user-image" src="/static/img/Antu_system-switch-user.svg">
+                </div>
+
+            </div>
+
+            <div class="update-profile-picture">
+                <button type="button" class="button upload-picture">UPLOAD NEW PICTURE</button>
+            </div>
+
+            <div class="edit-profile">
+                <div class="update-firstname setting">
+                    <b>FIRST NAME</b>
+                </div>
+
+                <div class="update-lastname setting">
+                    <b>LAST NAME</b>
+                </div>
+
+                <div class="update-height setting">
+                    <b>HEIGHT</b>
+                </div>
+
+                <div class="update-weight setting">
+                    <b>WEIGHT</b>
+                </div>
+
+                <div class="update-gender setting">
+                    <b>GENDER</b>
+                </div>
+
+
+
+
+
+            </div>
+
+
+
+
+            <!--
+            <div class="lifting-container">
+                <div class="squat lift-container" align="center">
+                    <img class="squat lift-image" src="/static/img/Wide_stance_squat_with_barbell_1.svg">
+                    <div class="lift-text">
+                        Squat
+                    </div>
+
+                </div>
+
+                <div class="bench lift-container" align="center">
+                    <img class="bench lift-image" src="/static/img/Bench_press_2.svg">
+                    <div class="lift-text">
+                        Bench
+                    </div>
+                </div>
+
+                <div class="deadlift lift-container" align="center">
+                    <img class="deadlift lift-image" src="/static/img/Barbell_dead_lifts_1.svg">
+                    <div class="lift-text">
+                        Deadlift
+                    </div>
+                </div>
+
+                <div class="overhead-press lift-container" align="center">
+                    <img class="overhead-press lift-image" src="/static/img/Barbell_shoulder_press_1.svg">
+                    <div class="lift-text">
+                        Overhead Press
+                    </div>
+                </div>
+
+                <div class="overhead-press other-container" align="center">
+                    <img class="journal other-image" src="/static/img/journal.svg">
+                    <div class="other-text">
+                        Workout Log
+                    </div>
+                </div>
+
+                <div class="overhead-press other-container" align="center">
+                    <img class="journal other-image" src="/static/img/achievements.svg">
+                    <div class="other-text">
+                        Achievements
+                    </div>
+                </div>
+
+                <div class="overhead-press other-container" align="center">
+                    <img class="journal other-image" src="/static/img/statistics_large_icon.svg">
+                    <div class="other-text">
+                        Statistics
+                    </div>
+                </div>
+
+                <div class="overhead-press other-container" align="center">
+                    <img class="journal other-image" src="/static/img/target-svgrepo-com.svg">
+                    <div class="other-text">
+                        Targets
+                    </div>
+                </div>
+
+
+            </div> -->
+        </div>
+
+
+        <div class="side-bar">
+            <div class="user-edit" align="right">
+                <b>EDIT</b>
+            </div>
+
+            <div class="user">
+                <img id="user-icon" src="/static/img/Antu_system-switch-user.svg">
+            </div>
+
+            <div id="username">
+                <b>James Grimes</b>
+
+                <div id="user-age">
+                    Male, 20 Years Old
+                </div>
+            </div>
+
+            <div class="user-details">
+                <div id="user-height">
+                    <b>HEIGHT</b>
+                </div>
+
+                <div id="user-weight">
+                    <b>WEIGHT</b>
+                </div>
+
+                <div id="height-number">
+                    170cm
+                </div>
+
+                <div id="weight-number">
+                    190lbs
+                </div>
+
+
+            </div>
+
+        <div class="navigation-bar">
+            <div class="nav-home menu-btn">
+                <img class="home-icon menu-icon" src="/static/img/home.svg">
+                Home
+            </div>
+
+            <div class="nav-goals menu-btn">
+                <img class="goals-icon menu-icon" src="/static/img/target.svg">
+                My Goals
+            </div>
+
+            <div class="nav-schedule menu-btn">
+                <img class="schedule-icon menu-icon" src="/static/img/Feather-core-calendar.svg">
+                Schedule
+            </div>
+
+            <div class="nav-achievements menu-btn">
+                <img class="achievements-icon menu-icon" src="/static/img/trophy.svg">
+                Achievements
+            </div>
+
+            <div class="nav-statistics menu-btn">
+                <img class="statistics-icon menu-icon" src="/static/img/statistics.svg">
+                Statistics
+            </div>
+
+            <div class="nav-settings menu-btn">
+                <img class="settings-icon menu-icon" src="/static/img/settings.svg">
+                Settings
+            </div>
+        </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
