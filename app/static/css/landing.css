@@ -10,6 +10,12 @@ div.fitness-tracker-title {
     -o-animation: fadein 3s;        /* Opera < 12.1 */
 }
 
+div.options {
+
+
+}
+
+
 div.select-option {
     border: 12px solid white;
     border-radius: 25px;
@@ -56,8 +62,8 @@ div.lifting {
 
 
 img.fitness-tracker-large-logo {
-    width: 50%;
-    height: 50%;
+    width: 260px;
+    height: 80px;
     filter: brightness(0) invert(1);
 
 }
