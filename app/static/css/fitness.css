@@ -338,6 +338,14 @@ div.setting {
 
 }
 
+img.edit-text {
+    cursor: pointer;
+    float: right;
+    margin-right: 5px;
+    height: 15px;
+    weight: 15px;
+}
+
 div.form-title {
     font-size: 14px;
     font-weight: bold;
@@ -349,7 +357,7 @@ div.form-info {
     padding-top: 5px;
     font-size: 14px;
     color: #212121;
-    
+
 }
 
 
