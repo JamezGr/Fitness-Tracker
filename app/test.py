@@ -9,7 +9,7 @@ fitness_db = mysql.connector.connect(
 
 mycursor = fitness_db.cursor()
 
-mycursor.execute("SELECT * FROM `users` WHERE `first_name` = 'James' ")
+mycursor.execute("SELECT * FROM `users` WHERE `first_name` = 'James' AND `last_name` = 'Grimes'")
 
 user_details = []
 
