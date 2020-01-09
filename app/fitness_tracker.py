@@ -95,6 +95,11 @@ def edit_profile():
     return render_template('profile.html', details=profile, date_settings=date)
 
 
+@app.route("/schedule")
+def show_schedule():
+    return render_template('schedule.html', details=profile, date_settings=date)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
 
