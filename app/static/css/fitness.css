@@ -432,6 +432,27 @@ input[type=radio] {
 
 }
 
+div.schedule-calendar {
+    margin-top: 60px;
+}
+
+div.calendar-day {
+    width:135px;
+    height:75px;
+    float: left;
+    background-color: white;
+    border: 1px solid #a8a8a8;
+
+}
+
+span.day-number {
+    float: right;
+    padding: 8px;
+    font-size: 12px;
+
+}
+
+
 img.fitness-tracker-small-logo {
 
     width: 270px;
