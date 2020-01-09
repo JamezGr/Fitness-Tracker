@@ -20,11 +20,11 @@
             <img class="calendar-icon" src="/static/img/Feather-core-calendar.svg">
 
             <div class="week-text">
-                <b>Day 1, Week 2</b>
+                Day {{ date_settings.0 }}, Week {{ date_settings.1 }}
             </div>
 
             <div class="day-text">
-                <b>Wednesday, 8th January 2020</b>
+                {{ date_settings.2 }}, {{ date_settings.3 }} {{ date_settings.4 }} {{ date_settings.5 }}
             </div>
 
             <div class="left-arrow small-icon">
@@ -125,10 +125,10 @@
             </div>
 
             <div id="username">
-                <b>James Grimes</b>
+                {{ details.0.0 }} {{ details.0.1 }}
 
                 <div id="user-age">
-                    Male, 20 Years Old
+                    {{ details.0.2 }}, {{ details.0.3 }} Years Old
                 </div>
             </div>
 
@@ -142,11 +142,11 @@
                 </div>
 
                 <div id="height-number">
-                    170cm
+                    {{ details.0.4 }}cm
                 </div>
 
                 <div id="weight-number">
-                    190lbs
+                    {{ details.0.5 }}lbs
                 </div>
 
 
