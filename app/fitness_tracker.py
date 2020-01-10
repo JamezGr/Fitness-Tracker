@@ -100,6 +100,11 @@ def show_schedule():
     return render_template('schedule.html', details=profile, date_settings=date)
 
 
+@app.route("/goals")
+def show_goals():
+    return render_template('goals.html', details=profile, date_settings=date)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
 

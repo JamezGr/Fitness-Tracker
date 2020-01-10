@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.4z">
-    <title>Fitness Tracker - Home</title>
+    <title>Fitness Tracker - My Goals</title>
 
     <!-- Default Home Page CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/fitness.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dynamic/css-circle/css/circle.css') }}">
 
 </head>
 <body>
@@ -49,68 +50,93 @@
     <div class="main-container">
         <div class="fitness">
             <div class="fitness-title">
-                Lifting
+                Goals
             </div>
 
             <div class="lifting-container">
                 <div class="squat lift-container" align="center">
-                    <img class="squat lift-image" src="/static/img/Wide_stance_squat_with_barbell_1.svg">
-                    <div class="lift-text">
+                    <div class="percentage">
+                        <div class="c100 p78">
+                            <span>140kg</span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="goal-text">
                         Squat
                     </div>
 
+                    <div class="target-text">
+                        Target: 180kg
+                    </div>
                 </div>
 
                 <div class="bench lift-container" align="center">
-                    <img class="bench lift-image" src="/static/img/Bench_press_2.svg">
-                    <div class="lift-text">
+
+                    <div class="percentage">
+                        <div class="c100 p71">
+                            <span>100kg</span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="goal-text">
                         Bench Press
+                    </div>
+
+                    <div class="target-text">
+                        Target: 140kg
                     </div>
                 </div>
 
                 <div class="deadlift lift-container" align="center">
-                    <img class="deadlift lift-image" src="/static/img/Barbell_dead_lifts_1.svg">
-                    <div class="lift-text">
+
+                    <div class="percentage">
+                        <div class="c100 p84">
+                            <span>185kg</span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="goal-text">
                         Deadlift
+                    </div>
+
+                    <div class="target-text">
+                        Target: 220kg
                     </div>
                 </div>
 
                 <div class="overhead-press lift-container" align="center">
-                    <img class="overhead-press lift-image" src="/static/img/Barbell_shoulder_press_1.svg">
-                    <div class="lift-text">
+
+                    <div class="percentage">
+                        <div class="c100 p80">
+                            <span>80kg</span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="goal-text">
                         Overhead Press
                     </div>
-                </div>
 
-                <div class="overhead-press other-container" align="center">
-                    <img class="journal other-image" src="/static/img/journal.svg">
-                    <div class="other-text">
-                        Workout Log
+                    <div class="target-text">
+                        Target: 100kg
                     </div>
                 </div>
-
-                <div class="overhead-press other-container" align="center">
-                    <img class="journal other-image" src="/static/img/achievements.svg">
-                    <div class="other-text">
-                        Achievements
-                    </div>
-                </div>
-
-                <div class="overhead-press other-container" align="center">
-                    <img class="journal other-image" src="/static/img/statistics_large_icon.svg">
-                    <div class="other-text">
-                        Statistics
-                    </div>
-                </div>
-
-                <div class="overhead-press other-container" align="center">
-                    <img class="journal other-image" src="/static/img/target-svgrepo-com.svg">
-                    <div class="other-text">
-                        Targets
-                    </div>
-                </div>
-
-
+                
             </div>
         </div>
 
