@@ -417,6 +417,7 @@ input[type=radio] {
 
 .menu-btn {
     margin-bottom: 12px;
+    text-decoration: none;
     cursor: pointer;
 }
 
@@ -436,8 +437,16 @@ div.schedule-calendar {
     margin-top: 60px;
 }
 
+div.schedule-month {
+    font-weight: bold;
+    float: right;
+    margin-left: 500px;
+
+
+}
+
 div.calendar-day {
-    width:135px;
+    width: 130px;
     height:75px;
     float: left;
     background-color: white;
@@ -446,12 +455,19 @@ div.calendar-day {
 }
 
 span.day-number {
-    float: right;
+    float: left;
     padding: 8px;
     font-size: 12px;
+    width: 130px;
+    height:75px;
+
+    cursor: pointer;
 
 }
 
+div.selected {
+    background: #cfcfcf;
+}
 
 img.fitness-tracker-small-logo {
 
