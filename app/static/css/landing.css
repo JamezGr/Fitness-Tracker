@@ -97,6 +97,10 @@ a:active {
   text-decoration: none;
 }
 
+div.select-option:hover {
+    filter: invert(47%) sepia(70%) saturate(3573%) hue-rotate(340deg) brightness(99%) contrast(105%);
+}
+
 
 @-moz-keyframes fadein {
     from { opacity: 0; }

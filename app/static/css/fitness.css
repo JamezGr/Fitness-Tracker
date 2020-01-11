@@ -223,6 +223,10 @@ div.fitness-title {
     position: fixed;
 }
 
+div.previous-page {
+    display: inline-block;
+}
+
 div.lift-text {
     margin-top: -10px;
     font-size: 22px;
@@ -574,6 +578,21 @@ div.progress {
     font-weight: bold;
     float: right;
     margin-top: -30px;
+}
+
+a.other-container-link:link {
+  color: white;
+  text-decoration: none;
+}
+
+a.other-container-link:visited {
+  color: white;
+  text-decoration: none;
+}
+
+a.other-container-link:hover {
+    filter: invert(47%) sepia(70%) saturate(3573%) hue-rotate(340deg) brightness(99%) contrast(105%);
+
 }
 
 a:link {
