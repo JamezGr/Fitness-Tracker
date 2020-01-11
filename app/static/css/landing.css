@@ -32,18 +32,18 @@ div.select-option {
 div.cycling {
     float: left;
 
-    -moz-animation: fadein 3.5s;      /* Firefox < 16 */
-    -webkit-animation: fadein 3.5s;   /* Safari, Chrome and Opera > 12.1 */
-    -o-animation: fadein 3.5s;        /* Opera < 12.1 */
+    -moz-animation: fadein 2s;      /* Firefox < 16 */
+    -webkit-animation: fadein 2s;   /* Safari, Chrome and Opera > 12.1 */
+    -o-animation: fadein 2s;        /* Opera < 12.1 */
 
 }
 
 div.swimming {
     float: left;
 
-    -moz-animation: fadein 4s;      /* Firefox < 16 */
-    -webkit-animation: fadein 4s;   /* Safari, Chrome and Opera > 12.1 */
-    -o-animation: fadein 4s;        /* Opera < 12.1 */
+    -moz-animation: fadein 2.5s;      /* Firefox < 16 */
+    -webkit-animation: fadein 2.5s;   /* Safari, Chrome and Opera > 12.1 */
+    -o-animation: fadein 2.5s;        /* Opera < 12.1 */
 
 }
 
@@ -51,9 +51,9 @@ div.lifting {
 
     float: left;
 
-    -moz-animation: fadein 4.5s;      /* Firefox < 16 */
-    -webkit-animation: fadein 4.5s;   /* Safari, Chrome and Opera > 12.1 */
-    -o-animation: fadein 4.5s;        /* Opera < 12.1 */
+    -moz-animation: fadein 3s;      /* Firefox < 16 */
+    -webkit-animation: fadein 3s;   /* Safari, Chrome and Opera > 12.1 */
+    -o-animation: fadein 3s;        /* Opera < 12.1 */
 
 
 }

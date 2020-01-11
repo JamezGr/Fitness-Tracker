@@ -85,9 +85,9 @@ def index():
     return render_template('landing.html')
 
 
-@app.route("/fitness")
+@app.route("/lifting")
 def fitness():
-    return render_template('fitness.html', details=profile, date_settings=date)
+    return render_template('lifting.html', details=profile, date_settings=date)
 
 
 @app.route("/profile")
@@ -103,6 +103,11 @@ def show_schedule():
 @app.route("/goals")
 def show_goals():
     return render_template('goals.html', details=profile, date_settings=date)
+
+
+@app.route("/achievements")
+def show_achievements():
+    return render_template('achievements.html', details=profile, date_settings=date)
 
 
 if __name__ == '__main__':

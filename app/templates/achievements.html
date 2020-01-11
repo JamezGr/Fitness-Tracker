@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.4z">
+    <title>Fitness Tracker - Home</title>
+
+    <!-- Default Home Page CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fitness.css') }}">
+
+    <!-- Progress Bar CSS -->
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="fitness-tracker-title" align="center">
+            <img class="fitness-tracker-small-logo" src="/static/img/fitness_tracker_logo.png">
+        </div>
+
+        <div class="calendar">
+            <img class="calendar-icon" src="/static/img/Feather-core-calendar.svg">
+
+            <div class="week-text">
+                Day {{ date_settings.0 }}, Week {{ date_settings.1 }}
+            </div>
+
+            <div class="day-text">
+                {{ date_settings.2 }}, {{ date_settings.3 }} {{ date_settings.4 }} {{ date_settings.5 }}
+            </div>
+
+            <div class="left-arrow small-icon">
+                <img id="left-arrow-icon" src="/static/img/left-arrow.svg">
+            </div>
+
+            <div class="right-arrow small-icon">
+                <img id="right-arrow-icon" src="/static/img/right-arrow.svg">
+            </div>
+        </div>
+
+        <div class="notifications-group">
+            <div class="notifications small-icon">
+                <img id="notifications-icon" src="/static/img/notifications-icon.svg">
+            </div>
+
+            <div class="settings small-icon">
+                <img id="settings-icon" src="/static/img/settings.svg">
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="fitness">
+            <div class="fitness-title">
+                Achievements
+            </div>
+
+            <div class="lifting-container">
+                <div class="achievements-list">
+                    <div class="achievement">
+                        <div class="achievement-title">
+                            First Step
+                        </div>
+
+                        <div class="achievement-description">
+                            Signed Up for Fitness Tracker
+                        </div>
+
+                        <div class="progress" align="center">
+                            100%
+                            <div class="progress-bar" >
+                                <span style="width: 100%"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="achievement">
+                        <div class="achievement-title">
+                            First Workout
+                        </div>
+
+                        <div class="achievement-description">
+                            Recorded First Workout in Workout Log
+                        </div>
+
+                        <div class="progress" align="center">
+                            0%
+                            <div class="progress-bar" >
+                                <span style="width: 0%"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="achievement">
+                        <div class="achievement-title">
+                            First Scheduled Workout
+                        </div>
+
+                        <div class="achievement-description">
+                            Scheduled First Workout in Schedule
+                        </div>
+
+                        <div class="progress" align="center">
+                            0%
+                            <div class="progress-bar" >
+                                <span style="width: 0%"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="achievement">
+                        <div class="achievement-title">
+                            First Goal Set
+                        </div>
+
+                        <div class="achievement-description">
+                            Set Your First Goal. Keep Working Towards Your Goals Everyday!
+                        </div>
+
+                        <div class="progress" align="center">
+                            0%
+                            <div class="progress-bar" >
+                                <span style="width: 0%"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="achievement">
+                        <div class="achievement-title">
+                            First Goal Achieved
+                        </div>
+
+                        <div class="achievement-description">
+                            You Just Achieved Your First Goal. Keep Working Hard!
+                        </div>
+
+                        <div class="progress" align="center">
+                            0%
+                            <div class="progress-bar" >
+                                <span style="width: 0%"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="side-bar">
+            <div class="user-edit" align="right">
+                <a href="/profile">EDIT</a>
+            </div>
+
+            <div class="user">
+                <img id="user-icon" src="/static/img/Antu_system-switch-user.svg">
+            </div>
+
+            <div id="username">
+                {{ details.0.0 }} {{ details.0.1 }}
+
+                <div id="user-age">
+                    {{ details.0.2 }}, {{ details.0.3 }} Years Old
+                </div>
+            </div>
+
+            <div class="user-details">
+                <div id="user-height">
+                    <b>HEIGHT</b>
+                </div>
+
+                <div id="user-weight">
+                    <b>WEIGHT</b>
+                </div>
+
+                <div id="height-number">
+                    {{ details.0.4 }}cm
+                </div>
+
+                <div id="weight-number">
+                    {{ details.0.5 }}lbs
+                </div>
+            </div>
+
+        <div class="navigation-bar">
+            <div class="nav-home menu-btn">
+                <img class="home-icon menu-icon" src="/static/img/home.svg">
+                <a href="/">Home</a>
+            </div>
+
+            <div class="nav-goals menu-btn">
+                <img class="goals-icon menu-icon" src="/static/img/target.svg">
+                <a href="/goals">My Goals</a>
+            </div>
+
+            <div class="nav-schedule menu-btn">
+                <img class="schedule-icon menu-icon" src="/static/img/Feather-core-calendar.svg">
+                <a href="/schedule">Schedule</a>
+            </div>
+
+            <div class="nav-achievements menu-btn">
+                <img class="achievements-icon menu-icon" src="/static/img/trophy.svg">
+                <a href="/achievements">Achievements</a>
+            </div>
+
+            <div class="nav-statistics menu-btn">
+                <img class="statistics-icon menu-icon" src="/static/img/statistics.svg">
+                Statistics
+            </div>
+
+            <div class="nav-settings menu-btn">
+                <img class="settings-icon menu-icon" src="/static/img/settings.svg">
+                Settings
+            </div>
+        </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
