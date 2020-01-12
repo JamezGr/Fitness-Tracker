@@ -15,10 +15,11 @@ div.light-box {
     margin-top: 20px;
     margin-left: 40px;
     position: absolute;
-    padding: 25px;
+    padding: 15px;
     background-color: white;
     width: 80%;
     height: 90%;
+    z-index: 5;
 
 
     -webkit-box-shadow: 0px 0px 22px -4px rgba(0,0,0,0.75);
@@ -27,11 +28,48 @@ div.light-box {
 
 }
 
-span.box-heading {
-    font-weight: bold;
-    font-size: 24px;
+div.notifications-list {
+    margin-top: 20px;
+    height: 200px;
+    overflow-y: scroll;
+}
+
+div.notification {
+    padding-left: 5px;
+    margin-top: -1px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    background-color: #f9f9f9;
+
+    border-top: 2px solid #e8e8e8;
+    border-bottom: 2px solid #e8e8e8;
 
 }
+
+div.notification:hover {
+    padding-left: 5px;
+    margin-top: -1px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    background-color: #f0f0f0;
+
+    border-top: 2px solid #909090;
+    border-bottom: 2px solid #909090;
+
+    cursor: pointer;
+
+}
+
+span.box-heading {
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+div.notification-date-time {
+    margin-top: 15px;
+    font-size: 10px;
+}
+
 
 div.notification-bar {
     display: none;
@@ -124,6 +162,12 @@ div.notifications {
 
 }
 
+div.all-notifications {
+    padding-top: 15px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
 img.notification-icon {
     display: inline-block;
     padding-right: 10px;
@@ -141,6 +185,12 @@ img.close-icon {
 
     filter: invert(97%) sepia(83%) saturate(0%) hue-rotate(270deg) brightness(106%) contrast(102%);
     cursor: pointer;
+}
+
+img.close-notifications {
+    float: right;
+    height: 20px;
+    width: 20px;
 }
 
 span.notification-text {
