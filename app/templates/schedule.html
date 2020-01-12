@@ -40,6 +40,7 @@
         </div>
     </div>
 
+
     <div class="main-container">
         <div class="fitness">
             <div class="fitness-title">
@@ -49,6 +50,10 @@
                     {{ date_settings.4 }} {{ date_settings.5 }}
                 </div>
             </div>
+
+                <div class="light-box" style="display:none">
+                    <span class="box-heading"> Schedule a Workout For {{ date_settings.2 }}, {{ date_settings.3 }} {{ date_settings.4 }} {{ date_settings.5 }}</span>
+                </div>
 
 
             <div class="schedule-calendar">
@@ -319,13 +324,9 @@
 
             <div class="nav-statistics menu-btn">
                 <img class="statistics-icon menu-icon" src="/static/img/statistics.svg">
-                Statistics
+                <a href="/statistics">Statistics</a>
             </div>
 
-            <div class="nav-settings menu-btn">
-                <img class="settings-icon menu-icon" src="/static/img/settings.svg">
-                Settings
-            </div>
         </div>
 
         </div>

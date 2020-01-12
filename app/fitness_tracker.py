@@ -110,6 +110,11 @@ def show_achievements():
     return render_template('achievements.html', details=profile, date_settings=date)
 
 
+@app.route("/statistics")
+def show_statistics():
+    return render_template('statistics.html', details=profile, date_settings=date)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
 

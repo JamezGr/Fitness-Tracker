@@ -2,24 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Fitness Tracker - Edit Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.4z">
+    <title>Fitness Tracker - Home</title>
 
     <!-- Default Home Page CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/fitness.css') }}">
 
 </head>
 <body>
-
-    <div class="notification-bar">
-
-        <div id="notification-message">
-            <div id="notifications-image">
-                <img class="close-icon" src="/static/img/close.svg">
-                <img class="notification-icon" src="/static/img/success.svg">
-                <span class="notification-text">Your Profile Was Successfully Updated.</span>
-            </div>
-        </div>
-    </div>
 
     <div class="top-bar">
         <div class="fitness-tracker-title" align="center">
@@ -53,90 +43,8 @@
     <div class="main-container">
         <div class="fitness">
             <div class="fitness-title">
-                Edit Profile
+                Statistics - Coming Soon
             </div>
-
-            <div class="current-profile">
-
-                <div class="current-profile-picture">
-                    <img class="current-user-image" src="/static/img/Antu_system-switch-user.svg">
-                </div>
-
-            </div>
-
-            <div class="update-buttons">
-                <div class="update-profile-picture">
-                    <button type="button" class="button upload-picture">Upload New Profile Picture</button>
-                </div>
-
-                <div id="update-profile-details">
-                    <button type="button" class="button update">Update Profile</button>
-                </div>
-
-            </div>
-
-
-
-
-            <div class="edit-profile-left">
-                <div class="update-firstname setting">
-
-                    <img class="edit-text" src="/static/img/edit.svg">
-
-                    <div class="form-title">
-                        FIRST NAME
-                    </div>
-
-                    <div class="first-name form-info">
-                        James
-                    </div>
-
-                </div>
-
-                <div class="update-height setting">
-
-                    <img class="edit-text" src="/static/img/edit.svg">
-
-                    <div class="form-title">
-                        HEIGHT
-                    </div>
-
-                    <div class="height form-info">
-                        170cm
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="edit-profile-right">
-                <div class="update-lastname setting">
-
-                    <img class="edit-text" src="/static/img/edit.svg">
-
-                    <div class="form-title">
-                        LAST NAME
-                    </div>
-
-                    <div class="last-name form-info">
-                        Grimes
-                    </div>
-
-                </div>
-
-                <div class="updated-weight setting">
-
-                    <img class="edit-text" src="/static/img/edit.svg">
-
-                    <div class="form-title">
-                        CURRENT WEIGHT
-                    </div>
-
-                    <div class="weight form-info">
-                        190lbs
-                    </div>
-                </div>
-            </div>
-
         </div>
 
 
@@ -159,11 +67,11 @@
 
             <div class="user-details">
                 <div id="user-height">
-                    HEIGHT
+                    <b>HEIGHT</b>
                 </div>
 
                 <div id="user-weight">
-                    WEIGHT
+                    <b>WEIGHT</b>
                 </div>
 
                 <div id="height-number">
@@ -200,7 +108,6 @@
                 <img class="statistics-icon menu-icon" src="/static/img/statistics.svg">
                 <a href="/statistics">Statistics</a>
             </div>
-
         </div>
 
         </div>

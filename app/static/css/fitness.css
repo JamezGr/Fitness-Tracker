@@ -11,6 +11,28 @@ body {
 
 }
 
+div.light-box {
+    margin-top: 20px;
+    margin-left: 40px;
+    position: absolute;
+    padding: 25px;
+    background-color: white;
+    width: 80%;
+    height: 90%;
+
+
+    -webkit-box-shadow: 0px 0px 22px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 22px -4px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 22px -4px rgba(0,0,0,0.75);
+
+}
+
+span.box-heading {
+    font-weight: bold;
+    font-size: 24px;
+
+}
+
 div.notification-bar {
     display: none;
     position: absolute;
