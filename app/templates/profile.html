@@ -10,6 +10,17 @@
 </head>
 <body>
 
+    <div class="notification-bar">
+
+        <div id="notification-message">
+            <div id="notifications-image">
+                <img class="close-icon" src="/static/img/close.svg">
+                <img class="notification-icon" src="/static/img/success.svg">
+                <span class="notification-text">Your Profile Was Successfully Updated.</span>
+            </div>
+        </div>
+    </div>
+
     <div class="top-bar">
         <div class="fitness-tracker-title" align="center">
             <img class="fitness-tracker-small-logo" src="/static/img/fitness_tracker_logo.png">
@@ -51,9 +62,19 @@
 
             </div>
 
-            <div class="update-profile-picture">
-                <button type="button" class="button upload-picture">UPLOAD NEW PICTURE</button>
+            <div class="update-buttons">
+                <div class="update-profile-picture">
+                    <button type="button" class="button upload-picture">Upload New Profile Picture</button>
+                </div>
+
+                <div id="update-profile-details">
+                    <button type="button" class="button update">Update Profile</button>
+                </div>
+
             </div>
+
+
+
 
             <div class="edit-profile-left">
                 <div class="update-firstname setting">
@@ -113,6 +134,7 @@
                     </div>
                 </div>
             </div>
+
 
 
             <!--
