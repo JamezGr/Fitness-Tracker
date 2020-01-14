@@ -1,8 +1,11 @@
 $(document).ready(function() {
 
     // Notifications Shown on Icon Click
-    $("#notifications-icon").click(function() {
-        modalOpen('305px', '285px', '9%', '90px');
+    $("#notifications-icon").click(function notificationsOpen() {
+
+        var modalType = $("#notifications-icon").attr('class');
+        modalOpen(modalType, '305px', '285px', '9%', '90px');
+
     });
 
     $(".close-notifications").click(function() {
@@ -10,9 +13,9 @@ $(document).ready(function() {
     });
 
 
-    function modalOpen(width, height, right, margin_top) {
+    function modalOpen(modalType, width, height, right, margin_top) {
 
-        $('.light-box').attr('style','width: ' + width + '; height: ' + height + '; right: ' + right +
+        $('#' + modalType).attr('style','width: ' + width + '; height: ' + height + '; right: ' + right +
         '; margin-top: ' + margin_top + ';');
 
     };
