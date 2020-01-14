@@ -7,6 +7,12 @@
     <!-- Default Home Page CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/fitness.css') }}">
 
+    <!-- jQuery JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Notifications JS -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/notifications.js') }}"></script>
+
 </head>
 <body>
 
@@ -49,6 +55,43 @@
             </div>
         </div>
     </div>
+
+
+    <div class="light-box" style="width: 305px; height: 285px; right:9%; margin-top: 90px; display: none;">
+        <img class="close-notifications" src="/static/img/close.svg">
+        <span class="box-heading"> Notifications</span>
+        <div class="notifications-list">
+            <div class="notification">
+                New Achievement Has Been Unlocked. Click Here For More Information
+
+                <div class="notification-date-time">
+                    January 12, 2020 - 20:26PM
+                </div>
+            </div>
+
+            <div class="notification">
+                New Achievement Has Been Unlocked. Click Here For More Information
+
+                <div class="notification-date-time">
+                    January 12, 2020 - 20:26PM
+                </div>
+            </div>
+
+            <div class="notification">
+                New Achievement Has Been Unlocked. Click Here For More Information
+
+                <div class="notification-date-time">
+                    January 12, 2020 - 20:26PM
+                </div>
+            </div>
+        </div>
+
+        <div class="all-notifications">
+            Click Here To See All Notifications
+        </div>
+
+    </div>
+
 
     <div class="main-container">
         <div class="fitness">

@@ -195,6 +195,8 @@ div.all-notifications {
     padding-top: 15px;
     font-weight: bold;
     font-size: 14px;
+
+    cursor: pointer;
 }
 
 img.notification-icon {
