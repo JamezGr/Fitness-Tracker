@@ -13,18 +13,24 @@ $(document).ready(function() {
     });
 
 
-    function modalOpen(modalType, width, height, right, margin_top) {
+    // Update Profile
+    $(".update").click(function(){
+        $(".notification-bar").css('display', 'block');
+    });
 
+    $(".close-icon").click(function(){
+        $(".notification-bar").css('display', 'none');
+    });
+
+
+    function modalOpen(modalType, width, height, right, margin_top) {
         $('#' + modalType).attr('style','width: ' + width + '; height: ' + height + '; right: ' + right +
         '; margin-top: ' + margin_top + ';');
-
     };
 
 
     function modalClose() {
-
         $('.light-box').attr('style', 'display: none;');
-
     }
 
 
