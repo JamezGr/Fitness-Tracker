@@ -743,6 +743,13 @@ div.progress {
     margin-top: -30px;
 }
 
+img.small-icon {
+    height: 20px;
+    weight: 20px;
+
+    cursor: pointer;
+}
+
 a.other-container-link:link {
   color: white;
   text-decoration: none;
