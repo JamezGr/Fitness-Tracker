@@ -14,6 +14,9 @@
     <!-- Notifications JS -->
     <script type="text/javascript" src="{{ url_for('static', filename='js/notifications.js') }}"></script>
 
+    <!-- Schedule JS -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/schedule.js') }}"></script>
+
 </head>
 <body>
 
@@ -29,10 +32,7 @@
                 Day {{ date_settings.0 }}, Week {{ date_settings.1 }}
             </div>
 
-            <div class="day-text">
-                {{ date_settings.2 }}, {{ date_settings.3 }} {{ date_settings.4 }} {{ date_settings.5 }}
-            </div>
-
+            <div class="day-text">{{ date_settings.2 }}, {{ date_settings.3 }} {{ date_settings.4 }} {{ date_settings.5 }}</div>
         </div>
 
         <div class="notifications-group">
@@ -93,7 +93,7 @@
                 </div>
             </div>
 
-                <div class="light-box" style="display:none;">
+                <div id="calendar-day" class="light-box" style="display:none;">
                     <span class="box-heading"> Schedule a Workout For {{ date_settings.2 }}, {{ date_settings.3 }} {{ date_settings.4 }} {{ date_settings.5 }}</span>
                     <img class="close-schedule" src="/static/img/close.svg">
 

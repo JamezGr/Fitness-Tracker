@@ -677,6 +677,10 @@ div.selected {
     background: #cfcfcf;
 }
 
+div.past {
+    background: #cfcfcf;
+}
+
 img.fitness-tracker-small-logo {
 
     width: 270px;
