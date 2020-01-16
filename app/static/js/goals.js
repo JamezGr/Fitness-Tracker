@@ -13,17 +13,6 @@ $(document).ready(function() {
     });
 
 
-    // Update Goal
-    $(".add-new-exercise").click(function(){
-        $(".notification-bar").css('display', 'block');
-        $('.light-box').attr('style', 'display: none;');
-    });
-
-    $(".close-icon").click(function(){
-        $(".notification-bar").css('display', 'none');
-    });
-
-
     function modalOpen(modalType, width, height, left, margin_top) {
         $('#' + modalType).attr('style','width: ' + width + '; height: ' + height + '; left: ' + left +
         '; margin-top: ' + margin_top + ';');

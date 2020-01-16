@@ -37,7 +37,37 @@ div.exercise {
 }
 
 div.add-new-exercise {
-    margin-top: 25px;
+    margin-top: 15px;
+    padding-top: 20px;
+    padding-left: 20px;
+
+    height: 40px;
+    width: 625px;
+
+    background-image: linear-gradient(360deg, #232526, #414345);
+    color: white;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+div.add-new-goal {
+    margin-top: 15px;
+    padding-top: 20px;
+    padding-left: 20px;
+
+    height: 40px;
+    width: 625px;
+
+    background-image: linear-gradient(360deg, #232526, #414345);
+    color: white;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+div.schedule-workout {
+    margin-top: 15px;
     padding-top: 20px;
     padding-left: 20px;
 

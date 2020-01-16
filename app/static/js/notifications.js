@@ -18,6 +18,19 @@ $(document).ready(function() {
         $(".notification-bar").css('display', 'block');
     });
 
+    // Schedule Workout
+    $(".schedule-workout").click(function(){
+        $(".notification-bar").css('display', 'block');
+        $('.light-box').attr('style', 'display: none;');
+    });
+
+    // Update Goal
+    $(".add-new-goal").click(function(){
+        $(".notification-bar").css('display', 'block');
+        $('.light-box').attr('style', 'display: none;');
+    });
+
+
     $(".close-icon").click(function(){
         $(".notification-bar").css('display', 'none');
     });

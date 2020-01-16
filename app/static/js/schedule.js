@@ -12,7 +12,7 @@ getCurrentDate();
 
         console.log(day_number[1]);
 
-        $("#calendar-day").attr('style', 'display: block;');
+        $("#calendar-day").attr('style', 'display: block; height: 100%;');
     });
 
 
