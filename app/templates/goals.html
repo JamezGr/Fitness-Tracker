@@ -17,8 +17,22 @@
     <!-- Notifications JS -->
     <script type="text/javascript" src="{{ url_for('static', filename='js/notifications.js') }}"></script>
 
+    <!-- Goals JS -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/goals.js') }}"></script>
+
 </head>
 <body>
+
+    <div class="notification-bar">
+
+        <div id="notification-message">
+            <div id="notifications-image">
+                <img class="close-icon" src="/static/img/close.svg">
+                <img class="notification-icon" src="/static/img/success.svg">
+                <span class="notification-text">New Goal Successfully Added. </span>
+            </div>
+        </div>
+    </div>
 
     <div class="top-bar">
         <div class="fitness-tracker-title" align="center">
@@ -81,6 +95,25 @@
         </div>
 
     </div>
+
+    <div id="add-new" class="light-box" style="display: none;">
+        <span class="box-heading"> Set a New Goal</span>
+        <img class="close-schedule" src="/static/img/close.svg">
+
+        <div class="exercise-list">
+            <div class="exercise">
+                <span class="exercise-number">Name of Exercise </span>
+                <div class="exercise-name">
+                    <input class="exercise-nice-name" type="text" name="FirstName" placeholder="Enter Name of Exercise Here">
+                </div>
+            </div>
+
+            <div class="add-new-exercise">
+                Add New Goal +
+            </div>
+        </div>
+    </div>
+
 
 
     <div class="main-container">

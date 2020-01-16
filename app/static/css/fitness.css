@@ -602,8 +602,9 @@ div.update-fullname {
 }
 
 input[type=text] {
+    margin-top: 5px;
     margin-bottom: 10px;
-    width: 400px;
+    width: 625px;
 
 }
 
