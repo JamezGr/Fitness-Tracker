@@ -161,19 +161,19 @@ function getDateSelected(year, month, day) {
 
 
     // Add Ending to Day Number
-    if (day.endsWith("1")) {
+    if (day == "1" || (day.endsWith("1") && parseInt(day) > 20)) {
         day = day.toString() + "st";
     }
 
-    else if (day.endsWith("2")) {
+    else if (day == "2" || (day.endsWith("2") && parseInt(day) > 20)) {
         day = day.toString() + "nd";
     }
 
-    else if (day.endsWith("3")) {
+    else if (day == "3" || (day.endsWith("3") && parseInt(day) > 20)) {
         day = day.toString() + "rd";
     }
 
-    else if (day.endsWith("11") || day.endsWith("12") || day.endsWith("13")) {
+    else if (day == "11" || day == "12" || day == "13") {
         day = day.toString() + "th";
     }
 
