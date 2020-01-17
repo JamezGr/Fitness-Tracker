@@ -6,11 +6,21 @@ getCurrentDate();
     // Notifications Shown on Icon Click
     $(".calendar-day").click(function () {
 
+        var current_date = $(".day-text").text();
+        var current_date = current_date.split(' ');
+
+        var week_day = current_date[0].replace(',', '');
+        var day_number = current_date[1].replace(current_date[1].slice(-2), '');
+        var month = current_date[2];
+        var year = current_date[3];
+
+
         var date = $(this).attr("class");
         var date_string = date.split(' ');
         var day_number = date_string[0].split('-');
+        var day = day_number[1];
 
-        console.log(day_number[1]);
+        getDateSelected(year, getSelectedMonth(month), day);
 
         $("#calendar-day").attr('style', 'display: block; height: 100%;');
     });
@@ -24,8 +34,7 @@ getCurrentDate();
 
 });
 
-
-function getCurrentDate() {
+function getSelectedMonth(month) {
 
     // Code For Each Month ie. January = First Month = 1, December = Twelfth Month = 12
     var months = {
@@ -43,21 +52,25 @@ function getCurrentDate() {
     "December": 12
     }
 
+    return months[month]
+
+}
+
+
+function getCurrentDate() {
 
     var current_date = $(".day-text").text();
     var current_date = current_date.split(' ');
 
-    let week_day = current_date[0].replace(',', '');
-    let day_number = current_date[1].replace(current_date[1].slice(-2), '');
-    let month = current_date[2];
-    let year = current_date[3];
+    var week_day = current_date[0].replace(',', '');
+    var day_number = current_date[1].replace(current_date[1].slice(-2), '');
+    var month = current_date[2];
+    var year = current_date[3];
 
     let daysInMonth = getDaysInMonth(year, month);
 
     daysInCurrentSchedule(day_number, daysInMonth);
 
-    console.log(daysInMonth);
-    console.log(day_number);
 
 }
 
@@ -111,5 +124,70 @@ function getDaysInMonth(year, month) {
     }
 
     return days_in_months[month]
+
+}
+
+function getDateSelected(year, month, day) {
+
+    var weekdayNames = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday'
+    ];
+
+    var monthNames = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+    ];
+
+    var date_selected = new Date(year + "-" + month + "-" + day);
+    var date = date_selected.getFullYear() + '-' + (date_selected.getMonth()+1) + '-' + date_selected.getDate();
+
+    var weekday = date_selected.getDay();
+
+
+    // Add Ending to Day Number
+    if (day.endsWith("1")) {
+        day = day.toString() + "st";
+    }
+
+    else if (day.endsWith("2")) {
+        day = day.toString() + "nd";
+    }
+
+    else if (day.endsWith("3")) {
+        day = day.toString() + "rd";
+    }
+
+    else if (day.endsWith("11") || day.endsWith("12") || day.endsWith("13")) {
+        day = day.toString() + "th";
+    }
+
+    else {
+        day = day.toString() + "th"
+    }
+
+
+    var final_date_format = weekdayNames[weekday] + ", " + day.toString() + " " + monthNames[month - 1]
+
+    console.log(weekdayNames[weekday] + ", " + day.toString() + " " + monthNames[month - 1]);
+
+    $(".box-heading")[1].innerText = "Schedule a Workout For " + final_date_format;
+
+    console.log($(".box-heading")[1].innerText);
 
 }
