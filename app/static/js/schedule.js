@@ -23,12 +23,12 @@ getCurrentDate();
 
         $("#calendar-day").attr('style', 'display: block; height: 100%;');
 
-        if (day > 31) {
+        if (day > 31 || (date_string[3] && date_string[3]=="past")) {
+            $(".notification-bar").css('display', 'block');
+            $(".notification-text").text("Unable to Schedule Workout on Selected Date. Please Try Again.");
             $("#calendar-day").attr('style', 'display: none; height: 100%;');
         }
     });
-
-
 
 
     $(".close-schedule").click(function () {
@@ -75,7 +75,6 @@ function getCurrentDate() {
     let daysInMonth = getDaysInMonth(year, month);
 
     daysInCurrentSchedule(day_number, daysInMonth);
-
 
 }
 
