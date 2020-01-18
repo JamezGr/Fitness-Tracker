@@ -14,7 +14,6 @@ getCurrentDate();
         var month = current_date[2];
         var year = current_date[3];
 
-
         var date = $(this).attr("class");
         var date_string = date.split(' ');
         var day_number = date_string[0].split('-');
@@ -23,7 +22,13 @@ getCurrentDate();
         getDateSelected(year, getSelectedMonth(month), day);
 
         $("#calendar-day").attr('style', 'display: block; height: 100%;');
+
+        if (day > 31) {
+            $("#calendar-day").attr('style', 'display: none; height: 100%;');
+        }
     });
+
+
 
 
     $(".close-schedule").click(function () {
@@ -184,10 +189,10 @@ function getDateSelected(year, month, day) {
 
     var final_date_format = weekdayNames[weekday] + ", " + day.toString() + " " + monthNames[month - 1]
 
-    console.log(weekdayNames[weekday] + ", " + day.toString() + " " + monthNames[month - 1]);
+    // console.log(weekdayNames[weekday] + ", " + day.toString() + " " + monthNames[month - 1]);
 
     $(".box-heading")[1].innerText = "Schedule a Workout For " + final_date_format;
 
-    console.log($(".box-heading")[1].innerText);
+    // console.log($(".box-heading")[1].innerText);
 
 }
