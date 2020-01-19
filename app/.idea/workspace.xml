@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f8870620-f726-404f-81f6-ee4052e91bcc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/static/js/schedule.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/schedule.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/schedule.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/schedule.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/schedule.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1335">
-              <caret line="89" column="47" selection-start-line="89" selection-start-column="34" selection-end-line="89" selection-end-column="47" />
+            <state relative-caret-position="279">
+              <caret line="100" column="101" lean-forward="true" selection-start-line="100" selection-start-column="101" selection-end-line="100" selection-end-column="101" />
             </state>
           </provider>
         </entry>
@@ -90,8 +91,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/schedule.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="27" column="104" selection-start-line="27" selection-start-column="104" selection-end-line="27" selection-end-column="104" />
+            <state relative-caret-position="150">
+              <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -121,7 +122,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>notifications</find>
       <find>all-notifications</find>
       <find>notifications-icon</find>
       <find>update</find>
@@ -150,6 +150,8 @@
       <find>Notifications</find>
       <find>console</find>
       <find>notification</find>
+      <find>text</find>
+      <find>schedule</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -304,13 +306,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/schedule.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1335">
-          <caret line="89" column="47" selection-start-line="89" selection-start-column="34" selection-end-line="89" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/statistics.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -372,10 +367,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/schedule.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="100" column="101" lean-forward="true" selection-start-line="100" selection-start-column="101" selection-end-line="100" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/schedule.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="27" column="104" selection-start-line="27" selection-start-column="104" selection-end-line="27" selection-end-column="104" />
+        <state relative-caret-position="150">
+          <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
         </state>
       </provider>
     </entry>

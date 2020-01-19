@@ -37,6 +37,33 @@ getCurrentDate();
         $("#calendar-day").attr('style', 'display: none;');
     });
 
+
+    $(".next-month").click(function () {
+
+        var scheduled_month = $(".schedule-month").text();
+        var scheduled_month = scheduled_month.trim();
+
+        var real_month = scheduled_month.split(' ');
+        var month = real_month[0];
+        var year = real_month[1];
+
+        var month_number = getSelectedMonth(real_month[0]);
+
+        console.log(real_month[0]);
+        console.log(month_number);
+        console.log(year);
+
+
+        // console.log(scheduled_month);
+        // var current_month = getSelectedMonth()
+
+    });
+
+    $(".previous-month").click(function () {
+
+        console.log("Previous Month Clicked");
+    });
+
 });
 
 function getSelectedMonth(month) {
