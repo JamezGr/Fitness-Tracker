@@ -1,5 +1,33 @@
 $(document).ready(function() {
 
+var months = {
+    "January": 1,
+    "February": 2,
+    "March": 3,
+    "April": 4,
+    "May": 5,
+    "June": 6,
+    "July": 7,
+    "August": 8,
+    "September": 9,
+    "October": 10,
+    "November": 11,
+    "December": 12
+    }
+
+var scheduled_month = $(".schedule-month").text();
+var scheduled_month = scheduled_month.trim();
+
+var real_month = scheduled_month.split(' ');
+var current_month = real_month[0];
+var current_year = real_month[1];
+var month_number = getSelectedMonth(real_month[0]);
+
+// DEBUGGING PURPOSES
+console.log(month_number);
+console.log(current_month);
+
+
 daysInCurrentSchedule();
 getCurrentDate();
 
@@ -39,19 +67,27 @@ getCurrentDate();
 
 
     $(".next-month").click(function () {
+        const getKey = (obj,val) => Object.keys(obj).find(key => obj[key] === val);
 
-        var scheduled_month = $(".schedule-month").text();
-        var scheduled_month = scheduled_month.trim();
+        // console.log(current_year);
 
-        var real_month = scheduled_month.split(' ');
-        var month = real_month[0];
-        var year = real_month[1];
+        if (month_number < 12) {
 
-        var month_number = getSelectedMonth(real_month[0]);
+            month_number++;
+            console.log(month_number);
+            console.log(getKey(months, month_number)  + " " + current_year);
 
-        console.log(real_month[0]);
-        console.log(month_number);
-        console.log(year);
+            $(".schedule-month").text(getKey(months, month_number)  + " " + current_year);
+        }
+
+        else if (month_number = 13){
+            month_number = 1;
+            current_year++;
+            console.log(month_number);
+            console.log(getKey(months, month_number) + " " + current_year);
+
+            $(".schedule-month").text(getKey(months, month_number)  + " " + current_year);
+        }
 
 
         // console.log(scheduled_month);
@@ -60,6 +96,29 @@ getCurrentDate();
     });
 
     $(".previous-month").click(function () {
+        const getKey = (obj,val) => Object.keys(obj).find(key => obj[key] === val);
+
+        if (month_number >= 1) {
+
+            month_number--;
+            console.log(month_number);
+            console.log(getKey(months, month_number)  + " " + current_year);
+
+            $(".schedule-month").text(getKey(months, month_number)  + " " + current_year);
+        }
+
+        if (month_number < 1){
+
+            if (month_number == 0) {
+                month_number = 12;
+                current_year--;
+                console.log(month_number);
+                console.log(getKey(months, month_number) + " " + current_year);
+
+                $(".schedule-month").text(getKey(months, month_number)  + " " + current_year);
+            }
+        }
+
 
         console.log("Previous Month Clicked");
     });
