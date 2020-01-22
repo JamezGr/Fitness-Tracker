@@ -1,4 +1,17 @@
+// wait for document to load
 $(document).ready(function() {
+
+// class selectDate {
+//
+// }
+
+// TODO: rewrite script in classes
+// TODO: rewrite all functions - refactoring
+// TODO: create function for Days, Months, Weeks. Return Data
+
+// function createMonths {
+// }
+
 
 var months = {
     "January": 1,
@@ -15,11 +28,19 @@ var months = {
     "December": 12
     }
 
+var current_date = $(".day-text").text();
+var current_date = current_date.split(' ');
+
+var week_day = current_date[0].replace(',', '');
+var current_day_number = current_date[1].replace(current_date[1].slice(-2), '');
+
+
 var scheduled_month = $(".schedule-month").text();
 var scheduled_month = scheduled_month.trim();
 
 var real_month = scheduled_month.split(' ');
 var current_month = real_month[0];
+var current_month_number = months[current_month];
 var current_year = real_month[1];
 var month_number = getSelectedMonth(real_month[0]);
 
@@ -27,9 +48,8 @@ var month_number = getSelectedMonth(real_month[0]);
 console.log(month_number);
 console.log(current_month);
 
-
 daysInCurrentSchedule();
-getCurrentDate();
+getCurrentDate(current_month_number, month_number);
 
     // Notifications Shown on Icon Click
     $(".calendar-day").click(function () {
@@ -46,6 +66,7 @@ getCurrentDate();
         var date_string = date.split(' ');
         var day_number = date_string[0].split('-');
         var day = day_number[1];
+
 
         getDateSelected(year, getSelectedMonth(month), day);
 
@@ -75,6 +96,7 @@ getCurrentDate();
 
             month_number++;
             console.log(month_number);
+            console.log(current_month_number);
             console.log(getKey(months, month_number)  + " " + current_year);
 
             $(".schedule-month").text(getKey(months, month_number)  + " " + current_year);
@@ -84,14 +106,30 @@ getCurrentDate();
             month_number = 1;
             current_year++;
             console.log(month_number);
+            console.log(current_month_number);
             console.log(getKey(months, month_number) + " " + current_year);
 
             $(".schedule-month").text(getKey(months, month_number)  + " " + current_year);
         }
 
+        if (month_number > current_month_number) {
+            $(".calendar-day").each(function() {
+                var day = $(this).attr('class');
 
-        // console.log(scheduled_month);
-        // var current_month = getSelectedMonth()
+                if (day.includes("past")) {
+                    $(this).removeClass("past");
+                }
+            });
+        }
+
+        else if (month_number == current_month_number) {
+            var selected_day = 1;
+
+            while (selected_day < current_day_number) {
+                $(".day-" + selected_day.toString()).addClass("past");
+                selected_day++;
+            }
+        }
 
     });
 
@@ -101,8 +139,6 @@ getCurrentDate();
         if (month_number >= 1) {
 
             month_number--;
-            console.log(month_number);
-            console.log(getKey(months, month_number)  + " " + current_year);
 
             $(".schedule-month").text(getKey(months, month_number)  + " " + current_year);
         }
@@ -112,15 +148,31 @@ getCurrentDate();
             if (month_number == 0) {
                 month_number = 12;
                 current_year--;
-                console.log(month_number);
-                console.log(getKey(months, month_number) + " " + current_year);
 
                 $(".schedule-month").text(getKey(months, month_number)  + " " + current_year);
             }
         }
+        
+        if (month_number > current_month_number) {
+            $(".calendar-day").each(function() {
+                var day = $(this).attr('class');
+
+                if (day.includes("past")) {
+                    $(this).removeClass("past");
+                }
+            });
+        }
+
+        else if (month_number == current_month_number) {
+            var selected_day = 1;
+
+            while (selected_day < current_day_number) {
+                $(".day-" + selected_day.toString()).addClass("past");
+                selected_day++;
+            }
+        }
 
 
-        console.log("Previous Month Clicked");
     });
 
 });
@@ -148,7 +200,7 @@ function getSelectedMonth(month) {
 }
 
 
-function getCurrentDate() {
+function getCurrentDate(current_month_number, month_number) {
 
     var current_date = $(".day-text").text();
     var current_date = current_date.split(' ');
@@ -160,12 +212,12 @@ function getCurrentDate() {
 
     let daysInMonth = getDaysInMonth(year, month);
 
-    daysInCurrentSchedule(day_number, daysInMonth);
+    daysInCurrentSchedule(day_number, daysInMonth, current_month_number, month_number);
 
 }
 
 
-function daysInCurrentSchedule(current_day, daysInMonth) {
+function daysInCurrentSchedule(current_day, daysInMonth, current_month_number, month_number) {
 
     days = [];
 
@@ -179,16 +231,15 @@ function daysInCurrentSchedule(current_day, daysInMonth) {
 
     $(".calendar-day").each(function() {
 
-        let day = $(this).attr('class');
-        let date_format = day.split(' ');
+        var day = $(this).attr('class');
+        var date_format = day.split(' ');
 
-        let day_format = date_format[0].split('-');
-        let day_number = day_format[1];
+        var day_format = date_format[0].split('-');
+        var day_number = day_format[1];
 
         days.push(day_number);
 
     });
-
 }
 
 
