@@ -42,11 +42,14 @@ var real_month = scheduled_month.split(' ');
 var current_month = real_month[0];
 var current_month_number = months[current_month];
 var current_year = real_month[1];
+var year_number = current_year;
 var month_number = getSelectedMonth(real_month[0]);
 
 // DEBUGGING PURPOSES
 console.log(month_number);
 console.log(current_month);
+console.log(current_year);
+console.log(year_number);
 
 daysInCurrentSchedule();
 getCurrentDate(current_month_number, month_number);
@@ -97,19 +100,19 @@ getCurrentDate(current_month_number, month_number);
             month_number++;
             console.log(month_number);
             console.log(current_month_number);
-            console.log(getKey(months, month_number)  + " " + current_year);
+            console.log(getKey(months, month_number)  + " " + year_number);
 
-            $(".schedule-month").text(getKey(months, month_number)  + " " + current_year);
+            $(".schedule-month").text(getKey(months, month_number)  + " " + year_number);
         }
 
         else if (month_number = 13){
             month_number = 1;
-            current_year++;
+            year_number++;
             console.log(month_number);
             console.log(current_month_number);
-            console.log(getKey(months, month_number) + " " + current_year);
+            console.log(getKey(months, month_number) + " " + year_number);
 
-            $(".schedule-month").text(getKey(months, month_number)  + " " + current_year);
+            $(".schedule-month").text(getKey(months, month_number)  + " " + year_number);
         }
 
         if (month_number > current_month_number) {
@@ -129,6 +132,26 @@ getCurrentDate(current_month_number, month_number);
                 $(".day-" + selected_day.toString()).addClass("past");
                 selected_day++;
             }
+        }
+
+        if (year_number > current_year) {
+            $(".calendar-day").each(function() {
+                var day = $(this).attr('class');
+
+                if (day.includes("past")) {
+                    $(this).removeClass("past");
+                }
+            });
+        }
+
+        else if (year_number < current_year) {
+            $(".calendar-day").each(function() {
+                var day = $(this).attr('class');
+
+                if (day.includes("past")) {
+                    $(this).addClass("past");
+                }
+            });
         }
 
     });
@@ -139,20 +162,24 @@ getCurrentDate(current_month_number, month_number);
         if (month_number >= 1) {
 
             month_number--;
+            console.log(month_number);
+            console.log(current_month_number);
+            console.log(getKey(months, month_number)  + " " + year_number);
 
-            $(".schedule-month").text(getKey(months, month_number)  + " " + current_year);
+            $(".schedule-month").text(getKey(months, month_number)  + " " + year_number);
         }
 
         if (month_number < 1){
 
-            if (month_number == 0) {
-                month_number = 12;
-                current_year--;
+            month_number = 12;
+            year_number--;
+            console.log(month_number);
+            console.log(current_month_number);
+            console.log(getKey(months, month_number)  + " " + year_number);
 
-                $(".schedule-month").text(getKey(months, month_number)  + " " + current_year);
-            }
+            $(".schedule-month").text(getKey(months, month_number)  + " " + year_number);
         }
-        
+
         if (month_number > current_month_number) {
             $(".calendar-day").each(function() {
                 var day = $(this).attr('class');
@@ -169,7 +196,30 @@ getCurrentDate(current_month_number, month_number);
             while (selected_day < current_day_number) {
                 $(".day-" + selected_day.toString()).addClass("past");
                 selected_day++;
+                console.log(month_number);
+                console.log(current_month_number);
+                console.log(getKey(months, month_number)  + " " + year_number);
             }
+        }
+
+        if (year_number > current_year) {
+            $(".calendar-day").each(function() {
+                var day = $(this).attr('class');
+
+                if (day.includes("past")) {
+                    $(this).removeClass("past");
+                }
+            });
+        }
+
+        else if (year_number < current_year) {
+            $(".calendar-day").each(function() {
+                var day = $(this).attr('class');
+
+                if (day.includes("past")) {
+                    $(this).addClass("past");
+                }
+            });
         }
 
 
