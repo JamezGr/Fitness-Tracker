@@ -37,26 +37,25 @@ $(document).ready(function() {
         // get number of days in month selected
         this.getDaysInMonth = function(month) {
           let days_in_months = {
-            let days_in_months = {
-                "January": 31,
-                "February": 28,
-                "March": 31,
-                "April": 30,
-                "May": 31,
-                "June": 30,
-                "July": 31,
-                "August": 31,
-                "September": 30,
-                "October": 31,
-                "November": 30,
-                "December": 31
-                }
+              "January": 31,
+              "February": 28,
+              "March": 31,
+              "April": 30,
+              "May": 31,
+              "June": 30,
+              "July": 31,
+              "August": 31,
+              "September": 30,
+              "October": 31,
+              "November": 30,
+              "December": 31
+              }
 
-                if (year % 4 == 0) {
-                    days_in_months["February"] = 29;
-                }
+              if (year % 4 == 0) {
+                  days_in_months["February"] = 29;
+              }
 
-                return days_in_months[month]
+              return days_in_months[month]
           }
 
           // get number of Days in Current Month Selected
@@ -118,70 +117,123 @@ $(document).ready(function() {
 
             // Get Name of Weekday based on Day Selected in Schedule
             let weekday = date_selected.getDay();
+
+            // Add Ending to Day Number
+            if (day == "1" || (day.endsWith("1") && parseInt(day) > 20)) {
+                day = day.toString() + "st";
+            }
+
+            else if (day == "2" || (day.endsWith("2") && parseInt(day) > 20)) {
+                day = day.toString() + "nd";
+            }
+
+            else if (day == "3" || (day.endsWith("3") && parseInt(day) > 20)) {
+                day = day.toString() + "rd";
+            }
+
+            else if (day == "11" || day == "12" || day == "13") {
+                day = day.toString() + "th";
+            }
+
+            else {
+                day = day.toString() + "th"
+            }
+
+
+            var final_date_format = weekdayNames[weekday] + ", " + day.toString() + " " + monthNames[month - 1]
+
+            // console.log(weekdayNames[weekday] + ", " + day.toString() + " " + monthNames[month - 1]);
+            return final_date_format
+            // $(".box-heading")[1].innerText = "Schedule a Workout For " + final_date_format;
           }
         }
       }
 
-      //     // // Add Ending to Day Number
-      //     // if (day == "1" || (day.endsWith("1") && parseInt(day) > 20)) {
-      //     //     day = day.toString() + "st";
-      //     // }
-      //     //
-      //     // else if (day == "2" || (day.endsWith("2") && parseInt(day) > 20)) {
-      //     //     day = day.toString() + "nd";
-      //     // }
-      //     //
-      //     // else if (day == "3" || (day.endsWith("3") && parseInt(day) > 20)) {
-      //     //     day = day.toString() + "rd";
-      //     // }
-      //     //
-      //     // else if (day == "11" || day == "12" || day == "13") {
-      //     //     day = day.toString() + "th";
-      //     // }
-      //     //
-      //     // else {
-      //     //     day = day.toString() + "th"
-      //     // }
-      //
-      //     // create date fomat DD/MM/YY
-      //     let final_date_format = weekdayNames[weekday] + ", " + day.toString() + " " + monthNames[month - 1]
-      //
-      //     // change date shown in Schedule Modal dynamically
-      //     // $(".box-heading")[1].innerText = "Schedule a Workout For " + final_date_format;
-      //
-      //     return final_date_format
-      //   }
-      // }
-    }
+
+      class EditScheduleStyle {
+          constructor() {
+            // get the date of the selected element from calendar
+            this.date = $(this).attr("class");
+            this.date_string = this.date.split(' ');
+            this.day_number = this.date_string[0].split('-');
+
+            this.day = day_number[1];
+            this.month = CreateSchedule.scheduled_month;
+            this.year = CreateSchedule.current_year_number;
 
 
-  var createSchedule = new CreateSchedule();
-  let current_month = createSchedule.current_month;
-  let scheduled_month = createSchedule.scheduled_month;
+            // change style for days that have past on schedule
+            this.openScheduleWindow = function() {
+                CreateSchedule.getDateSelected(EditScheduleStyle.year,
+                EditScheduleStyle.month, EditScheduleStyle.day);
 
-  let current_day_number = createSchedule.current_day_number;
-  let current_month_number = createSchedule.getFullMonth(current_month);
-  let current_year_number = createSchedule.current_year_number;
+                $("#calendar-day").attr('style', 'display: block; height: 100%;');
 
-  let scheduled_month_number = createSchedule.getFullMonth(scheduled_month);
-  let scheduled_year_number = createSchedule.scheduled_year;
+                if (day > 31 || (date_string[3] && date_string[3]=="past")) {
+                    $(".notification-bar").css('display', 'block');
+                    $(".notification-text").text("Unable to Schedule Workout on Selected Date. Please Try Again.");
+                    $("#calendar-day").attr('style', 'display: none; height: 100%;');
+                }
+            };
 
-  // let date_format = createSchedule.getDateSelected(current_year_number, current_month_number, current_day_number);
+            // hide schedule window when close button clicked
+            this.closeSchedule = function() {
+              alert("All unsaved changes will be discarded. ");
+              $("#calendar-day").attr('style', 'display: none;');
+            };
 
-  console.log(current_day_number);
-  console.log(current_month_number);
-  console.log(current_year_number);
+            // move to next month of Schedule Calendar
+            this.openNextMonth = function() {
+                const getKey = (obj,val) => Object.keys(obj).find(key => obj[key] === val);
 
-  console.log("\n" + scheduled_month_number);
-  console.log(scheduled_year_number);
+                let scheduled_month = CreateSchedule.scheduled_month;
+                let scheduled_month_number = CreateSchedule.getFullMonth(scheduled_month);
+                let current_month = CreateSchedule.current_month;
+                let current_month_number = CreateSchedule.getFullMonth(current_month);
 
-  // console.log("\n" + date_format);
-
-
-});
-
-
-class EditScheduleStyle {
+                let scheduled_year = CreateSchedule.scheduled_year;
+                let current_year = CreateSchedule.current_year_number;
 
 
-}
+                if (scheduled_month_number < 12) {
+                  scheduled_month_number++;
+
+                  // DEBUGGING PURPOSES
+                  console.log(scheduled_month_number);
+                  console.log(current_month_number);
+                  console.log(scheduled_month_number + " " + scheduled_year_number);
+
+                  $(".schedule-month").text(scheduled_month + " " scheduled_year_number);
+                }
+            }
+
+
+          }
+      }
+
+
+
+
+      var createSchedule = new CreateSchedule();
+      let current_month = createSchedule.current_month;
+      let scheduled_month = createSchedule.scheduled_month;
+
+      let current_day_number = createSchedule.current_day_number;
+      let current_month_number = createSchedule.getFullMonth(current_month);
+      let current_year_number = createSchedule.current_year_number;
+
+      let scheduled_month_number = createSchedule.getFullMonth(scheduled_month);
+      let scheduled_year_number = createSchedule.scheduled_year;
+
+      let date_format = createSchedule.getDateSelected(current_year_number, current_month_number, current_day_number);
+
+      console.log(current_day_number);
+      console.log(current_month_number);
+      console.log(current_year_number);
+
+      console.log("\n" + scheduled_month_number);
+      console.log(scheduled_year_number);
+
+      console.log(date_format);
+
+    });
