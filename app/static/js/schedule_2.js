@@ -169,7 +169,7 @@ $(document).ready(function() {
 
                 $("#calendar-day").attr('style', 'display: block; height: 100%;');
 
-                if (day > 31 || (date_string[3] && date_string[3]=="past")) {
+                if (EditScheduleStyle.day > 31 || (EditScheduleStyle.date_string[3] && EditScheduleStyle.date_string[3]=="past")) {
                     $(".notification-bar").css('display', 'block');
                     $(".notification-text").text("Unable to Schedule Workout on Selected Date. Please Try Again.");
                     $("#calendar-day").attr('style', 'display: none; height: 100%;');
@@ -205,6 +205,57 @@ $(document).ready(function() {
 
                   $(".schedule-month").text(scheduled_month + " " scheduled_year_number);
                 }
+
+                else if (scheduled_month_number = 13) {
+                  scheduled_month_number = 1;
+                  scheduled_year++;
+
+                  // DEBUGGING PURPOSES
+                  console.log(scheduled_month_number);
+                  console.log(current_month_number);
+                  console.log(scheduled_month_number + " " + scheduled_year_number);
+                }
+
+                // remove past day styling for future dates in schedule calendar
+                if (scheduled_month_number > current_month_number ) {
+                  $(".calendar-day").each(function() {
+                    var day = $(this).attr('class');
+
+                    if (day.includes("past")) {
+                      $(this).removeClass("past");
+                    }
+                });
+
+                // restyle schedule if the current month is selected
+                else if (scheduled_month_number == current_month_number) {
+                  let selected_day = 1;
+
+                  while (selected_day < current_day_number) {
+                    $(".day-" + selected_day.toString()).addClass("past");
+                    selected_day++;
+                  }
+                }
+
+                if (scheduled_year_number > current_year_number) {
+                  $(".calendar-day").each(function() {
+                    var day = $(this).attr('class');
+
+                    if (day.includes("past")) {
+                        $(this).removeClass("past");
+                    }
+                  });
+                }
+
+                else if (scheduled_year_number < current_year_number) {
+                  $(".calendar-day").each(function() {
+                      var day = $(this).attr('class');
+
+                      if (day.includes("past")) {
+                          $(this).addClass("past");
+                      }
+                  });
+                }
+              }
             }
 
 
