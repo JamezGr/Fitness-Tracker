@@ -258,7 +258,26 @@ $(document).ready(function() {
               }
             }
 
+            this.previousMonth = function() {
 
+              let scheduled_month = CreateSchedule.scheduled_month;
+              let scheduled_month_number = CreateSchedule.getFullMonth(scheduled_month);
+              let current_month = CreateSchedule.current_month;
+              let current_month_number = CreateSchedule.getFullMonth(current_month);
+
+              let scheduled_year = CreateSchedule.scheduled_year;
+              let current_year = CreateSchedule.current_year_number;
+
+              if (scheduled_month_number >= 1) {
+
+                scheduled_month_number--;
+
+                // DEBUGGING PURPOSES
+                console.log(scheduled_month_number);
+                console.log(current_month_number);
+                console.log(scheduled_month_number + " " + scheduled_year_number);
+              }
+            }
           }
       }
 
