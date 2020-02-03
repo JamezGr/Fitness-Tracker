@@ -260,6 +260,8 @@ $(document).ready(function() {
 
             this.previousMonth = function() {
 
+              let current_day_number = CreateSchedule.current_day_number;
+
               let scheduled_month = CreateSchedule.scheduled_month;
               let scheduled_month_number = CreateSchedule.getFullMonth(scheduled_month);
               let current_month = CreateSchedule.current_month;
@@ -276,6 +278,47 @@ $(document).ready(function() {
                 console.log(scheduled_month_number);
                 console.log(current_month_number);
                 console.log(scheduled_month_number + " " + scheduled_year_number);
+
+                $(".schedule-month").text(scheduled_month + " " scheduled_year_number);
+              }
+
+              if (scheduled_month_number < 1) {
+
+                scheduled_month_number = 12;
+                scheduled_year--;
+
+                // DEBUGGING PURPOSES
+                console.log(scheduled_month_number);
+                console.log(current_month_number);
+                console.log(scheduled_month_number + " " + scheduled_year_number);
+
+                $(".schedule-month").text(scheduled_month + " " scheduled_year_number);
+              }
+
+              if (scheduled_month_number > current_month_number) {
+                $(".calendar-day").each(function() {
+                  var day = $(this).attr('class');
+
+                  if (day.includes("past")) {
+                    $(this).removeClass("past");
+                  }
+                });
+              }
+
+              else if (scheduled_month_number == current_month_number) {
+                for (selected_day = 1; selected_day < current_day_number; selected_day++; )
+                  $(".day-" + selected_day.toString()).addClass("past");
+                  selected_day++;
+              }
+
+              if (scheduled_year > current_year) {
+                $(".calendar-day").each(function() {
+                  var day = $(this).attr('class');
+
+                  if (day.includes("past")) {
+                      $(this).addClass("past");
+                  }
+                });
               }
             }
           }
