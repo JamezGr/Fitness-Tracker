@@ -167,12 +167,13 @@ $(document).ready(function() {
   let createSchedule = new CreateSchedule();
   createSchedule.daysInCurrentSchedule();
 
+  let curent_day_number = createSchedule.current_day_number;
   let scheduled_month_number = createSchedule.getFullMonth(createSchedule.scheduled_month);
   let scheduled_year = createSchedule.scheduled_year;
 
 
   $(".next-month").click(function() {
-    let curent_day_number = createSchedule.current_day_number;
+    let current_day_number = createSchedule.current_day_number;
     let current_month_number = createSchedule.getFullMonth(createSchedule.current_month);
     let current_year_number = createSchedule.current_year_number;
 
@@ -196,7 +197,17 @@ $(document).ready(function() {
     }
 
     if (scheduled_month_number == current_month_number && scheduled_year == current_year_number) {
-      createSchedule.daysInCurrentSchedule();
+      let selected_day = 1;
+
+      // reset style of calendar when current month and year is selected
+      $(".calendar-day").each(function() {
+          $(this).removeClass("past");
+      });
+
+      while (selected_day < current_day_number) {
+        $(".day-" + selected_day.toString()).addClass("past");
+        selected_day++;
+      }
     }
 
     $(".schedule-month").text(month[scheduled_month_number] + " " + scheduled_year);
