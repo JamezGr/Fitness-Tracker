@@ -712,6 +712,10 @@ div.past {
     background: #cfcfcf;
 }
 
+div.invalid {
+    background: #cfcfcf;
+}
+
 img.fitness-tracker-small-logo {
 
     width: 270px;

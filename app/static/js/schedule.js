@@ -34,6 +34,8 @@ $(document).ready(function() {
 
       // get number of days in month selected
       this.getDaysInMonth = function(month) {
+        let year = this.scheduled_year;
+
         let days_in_months = {
             "January": 31,
             "February": 28,
@@ -140,7 +142,6 @@ $(document).ready(function() {
 
         var final_date_format = weekdayNames[weekday] + ", " + day.toString() + " " + monthNames[month - 1]
 
-        // console.log(weekdayNames[weekday] + ", " + day.toString() + " " + monthNames[month - 1]);
         return final_date_format
         // $(".box-heading")[1].innerText = "Schedule a Workout For " + final_date_format;
       }
@@ -170,6 +171,23 @@ $(document).ready(function() {
   let curent_day_number = createSchedule.current_day_number;
   let scheduled_month_number = createSchedule.getFullMonth(createSchedule.scheduled_month);
   let scheduled_year = createSchedule.scheduled_year;
+
+
+  function styleInvalidDates(month) {
+    let createSchedule = new CreateSchedule();
+    let number_of_days_in_month = createSchedule.getDaysInMonth(month);
+
+    $(".calendar-day").each(function() {
+      let day = $(this).attr('class').split();
+      let day_number = day[0].split("-")[1].split(" ")[0];
+
+      if (day_number > number_of_days_in_month) {
+        $(".day-" + day_number.toString()).addClass("invalid");
+      }
+    });
+
+    return number_of_days_in_month
+  }
 
 
   $(".next-month").click(function() {
@@ -248,6 +266,36 @@ $(document).ready(function() {
   });
 
 
+  $(".calendar-day").click(function() {
+    let createSchedule = new CreateSchedule();
+    let calendar_day = $(this).attr("class");
+    let calendar_day_array = calendar_day.split(" ");
+
+    // find day number from current day selected in calendar
+    let calendar_day_number = calendar_day_array[0].split("-")[1];
+
+    // check if calendar day is currently selected
+    let calendar_day_state = calendar_day_array[2];
+
+    // check whether calendar day is past
+    let calendar_day_time = calendar_day_array[3];
+
+    // get selected month and year from schedule
+    let calendar_month_year = $(".schedule-month").text().split(" ");
+    let calendar_month = createSchedule.getFullMonth(calendar_month_year[0]);
+    let calendar_year = calendar_month_year[1];
+
+    // return final date format
+    let calendar_date = createSchedule.getDateSelected(calendar_year, calendar_month, calendar_day_number);
+
+    // console.log(calendar_day_number);
+    // console.log(calendar_month);
+    // console.log(calendar_year);
+    console.log(styleInvalidDates(calendar_month_year[0]) + " days in this month");
+
+    console.log(calendar_date);
+
+  });
 
 
 
