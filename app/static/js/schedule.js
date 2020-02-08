@@ -148,6 +148,36 @@ $(document).ready(function() {
     }
   }
 
+  class StyleSchedule {
+    constructor(month) {
+      this.month = month
+    }
+
+    styleInvalidDates(month) {
+      let createSchedule = new CreateSchedule();
+      let number_of_days_in_month = createSchedule.getDaysInMonth(month);
+
+      // reset invalid dates each time month changes
+      $(".calendar-day").each(function() {
+        if ($(this).hasClass("invalid")) {
+          $(this).removeClass("invalid");
+        }
+      });
+
+      // for days not in month add styling
+      $(".calendar-day").each(function() {
+        let day = $(this).attr('class').split();
+        let day_number = day[0].split("-")[1].split(" ")[0];
+
+        if (day_number > number_of_days_in_month) {
+          $(".day-" + day_number.toString()).addClass("invalid");
+        }
+      });
+
+      return number_of_days_in_month
+    }
+  }
+
   // number to months conversion
   let month = {
     1: "January",
@@ -169,7 +199,10 @@ $(document).ready(function() {
   createSchedule.daysInCurrentSchedule();
 
   let curent_day_number = createSchedule.current_day_number;
-  let scheduled_month_number = createSchedule.getFullMonth(createSchedule.scheduled_month);
+  let current_month_number = createSchedule.getFullMonth(createSchedule.current_month);
+
+  let scheduled_month = createSchedule.scheduled_month;
+  let scheduled_month_number = createSchedule.getFullMonth(scheduled_month);
   let scheduled_year = createSchedule.scheduled_year;
 
 
@@ -298,7 +331,14 @@ $(document).ready(function() {
   });
 
 
+  $('.schedule-month').bind("DOMSubtreeModified",function(){
+    let styleSchedule = new StyleSchedule();
+    let scheduled_month_year = $(".schedule-month").text().trim().split(" ");
+    let scheduled_month = scheduled_month_year[0];
 
+    styleSchedule.styleInvalidDates(scheduled_month);
+    console.log(scheduled_month);
+  });
 
 
 
