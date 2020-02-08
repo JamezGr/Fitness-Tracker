@@ -32,7 +32,7 @@ $(document).ready(function() {
 
 
     $(".close-icon").click(function(){
-        $(".notification-bar").css('display', 'none');
+        $(".notification-bar").fadeOut();
     });
 
 
@@ -48,5 +48,3 @@ $(document).ready(function() {
 
 
 });
-
-

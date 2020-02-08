@@ -714,6 +714,7 @@ div.past {
 
 div.invalid {
     background: #cfcfcf;
+    cursor: pointer;
 }
 
 img.fitness-tracker-small-logo {
