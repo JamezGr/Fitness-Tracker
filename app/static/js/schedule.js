@@ -198,6 +198,7 @@ $(document).ready(function() {
   let createSchedule = new CreateSchedule();
   createSchedule.daysInCurrentSchedule();
 
+
   let curent_day_number = createSchedule.current_day_number;
   let current_month_number = createSchedule.getFullMonth(createSchedule.current_month);
 
@@ -205,22 +206,8 @@ $(document).ready(function() {
   let scheduled_month_number = createSchedule.getFullMonth(scheduled_month);
   let scheduled_year = createSchedule.scheduled_year;
 
-
-  function styleInvalidDates(month) {
-    let createSchedule = new CreateSchedule();
-    let number_of_days_in_month = createSchedule.getDaysInMonth(month);
-
-    $(".calendar-day").each(function() {
-      let day = $(this).attr('class').split();
-      let day_number = day[0].split("-")[1].split(" ")[0];
-
-      if (day_number > number_of_days_in_month) {
-        $(".day-" + day_number.toString()).addClass("invalid");
-      }
-    });
-
-    return number_of_days_in_month
-  }
+  let styleSchedule = new StyleSchedule();
+  styleSchedule.styleInvalidDates(scheduled_month);
 
 
   $(".next-month").click(function() {
@@ -321,13 +308,6 @@ $(document).ready(function() {
     // return final date format
     let calendar_date = createSchedule.getDateSelected(calendar_year, calendar_month, calendar_day_number);
 
-    // console.log(calendar_day_number);
-    // console.log(calendar_month);
-    // console.log(calendar_year);
-    console.log(styleInvalidDates(calendar_month_year[0]) + " days in this month");
-
-    console.log(calendar_date);
-
   });
 
 
@@ -337,7 +317,6 @@ $(document).ready(function() {
     let scheduled_month = scheduled_month_year[0];
 
     styleSchedule.styleInvalidDates(scheduled_month);
-    console.log(scheduled_month);
   });
 
 
