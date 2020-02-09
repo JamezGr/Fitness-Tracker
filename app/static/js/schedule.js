@@ -190,6 +190,20 @@ $(document).ready(function() {
     }
   }
 
+  class ScheduleWorkout {
+    constructor() {
+      this.test = "test";
+    }
+
+    newExercise() {
+      console.log("New Exercise Clicked");
+    }
+
+    addExercise() {
+      console.log("Exercise Added");
+    }
+  }
+
   // number to months conversion
   let month = {
     1: "January",
@@ -220,6 +234,8 @@ $(document).ready(function() {
 
   let styleSchedule = new StyleSchedule();
   styleSchedule.styleInvalidDates(scheduled_month);
+
+  let scheduleWorkout = new ScheduleWorkout();
 
 
   $(".next-month").click(function() {
@@ -340,5 +356,39 @@ $(document).ready(function() {
     let scheduled_month = scheduled_month_year[0];
 
     styleSchedule.styleInvalidDates(scheduled_month);
+  });
+
+  $(".add-new-exercise").click(function() {
+    let new_exercise =
+    // TODO : Render New Exercise HTML Dynamically
+    '<div class="exercise">' +
+      '<span class="exercise-number">Exercise ' + ($(".exercise-number").length + 1).toString() + ': </span>' +
+      '<div class="exercise-name">' +
+      '<select class="exercise-options">' +
+        '<option value="squat">Squat</option>' +
+        '<option value="bench">Bench</option>' +
+        '<option value="deadlift">Deadlift</option>' +
+      '</select>' +
+
+      '<span class="exercise-sets"> Sets: ' +
+        '<input type="number" name="sets" min="1" max="10">' +
+      '</span>' +
+
+      '<span class="exercise-reps"> Reps: ' +
+        '<input type="number" name="reps" min="1" max="100">' +
+      '</span>' +
+    '</div></div>'
+
+
+
+    if ($(".exercise-number").length < 10) {
+        // add exercise to list
+        $(".exercise-list").append(new_exercise);
+        // scroll to bottom of list automatically once exercise added to list
+        $(".exercise-list")[0].scrollTop = $(".exercise-list")[0].scrollHeight;
+    }
+    else {
+      console.log("ERROR: Reached Max Number of Exercises for Workout.")
+    }
   });
 });

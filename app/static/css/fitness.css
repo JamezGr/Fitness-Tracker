@@ -30,6 +30,10 @@ div.light-box {
 
 div.exercise-list {
     margin-top: 15px;
+    width: 800px;
+    height: 205px;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 div.exercise {
