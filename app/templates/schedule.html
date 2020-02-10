@@ -118,6 +118,11 @@
                 <div id="calendar-day" class="light-box" style="display:none;">
                     <span class="box-heading"> Schedule a Workout For {{ date_settings.2 }}, {{ date_settings.3 }} {{ date_settings.4 }} {{ date_settings.5 }}</span>
                     <img class="close-schedule" src="/static/img/close.svg">
+                    <div class="schedule-notification">
+                      <img class="close-icon" id="schedule-close" src="/static/img/close.svg">
+                      <img class="notification-icon" src="/static/img/warning.svg">
+                      <span class="schedule-message">Warning: Reached Max Number of Exercises Allowed in Workout</span>
+                    </div>
 
                     <div class="exercise-list">
                         <div class="exercise">
@@ -188,7 +193,7 @@
                     <div class="schedule-workout">
                         Schedule Workout
                     </div>
-                    
+
                 </div>
 
 

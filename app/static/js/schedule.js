@@ -389,6 +389,14 @@ $(document).ready(function() {
     }
     else {
       console.log("ERROR: Reached Max Number of Exercises for Workout.")
+      $(".schedule-notification").fadeIn();
+      $(".schedule-notification").attr("style", "display: block");
+
     }
   });
+
+  $("#schedule-close").click(function() {
+    $(".schedule-notification").fadeIn();
+    $(".schedule-notification").attr("style", "display: none");
+  })
 });
